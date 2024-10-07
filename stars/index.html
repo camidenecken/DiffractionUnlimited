@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>ExoMap</title>
+
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-24341067-2"></script>
+		<script src="three/three.min.js"></script>
+		<script src="three/TrackballControls.js"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', 'UA-24341067-2');
+		</script>
+
+		<meta charset="UTF-8">
+
+		<link rel="stylesheet" href="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />
+		<link rel="stylesheet" href="styles.css">
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js" charset="utf-8"></script>
+		<script type='text/javascript' src='three/tween.js'></script>
+	</head>
+
+	<body>
+		<div style="position: absolute; color: rgb(255, 255, 255); bottom: 10px; left: 0px;">
+			<h2>Star Search</h2><div id="suggestions-box" class="suggestions-box"></div>
+			<input type="text" placeholder="Name" id="srchkey" autocomplete="off">
+			<button type="button"onclick="searchfunc();" id="srchbtn">Search</button>
+			<br>
+		</div>
+		<div style="position: absolute; color: rgb(255, 255, 255); top: 0px; left: 0px;">
+			<h1 id="starName2">Sun</h1> 
+			<p><span id="starName" style="float: left;">Sun</span> centered and colored <b><span id="starColor"
+				style="color: #f0f">magenta</span></b></p>
+			<p style="display: None" id="starNames">Sun</p>
+			<p style="margin-bottom: 1em;" id="starDist">0.0 pc (0.0 ly)</p>
+		</div>
+		<div id="telescopeDiv" style="position: absolute; color: rgb(255, 255, 255); bottom: 0px; right: 65%; display: flex; align-items: center; margin-top: 10px;">
+			<div style="position: absolute; color: rgb(255, 255, 255); bottom: 25px; right: 30%;">
+				<p style="margin-right: 1px;"><strong>Diameter</strong></p>
+				<form id="sliderData" style="display: inline">
+					<span id="sliderValue">2</span>
+					<input id="slider1" type="range" min="0" max="9" value="0">
+				</form>
+			</div>
+			<div style="background-color: transparent; margin-top: 10px; padding: 0px; display: flex; align-items: center;";>
+				<p style="margin-right: 10px;"><strong>Wavelength</strong></p>
+				<label class="switch">
+					<input type="checkbox" id="wavelengthSlider">
+					<span class="slider round"></span>
+				</label>
+				<strong><p style="color: yellow" id="wavelengthValue">Visible</p></strong>
+			</div>
+		</div>
+		<div style="position: absolute; color: rgb(255, 255, 255); bottom: 0px; right: 0px;">
+			<h2>Exoplanet Visibility</h2>
+			<p id="visibility"></p>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>

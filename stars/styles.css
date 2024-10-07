@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+a {
+  color: #fff;
+}
+
+div {
+  padding-block-end: 0.5em;
+  padding-inline-start: 1em;
+  padding-inline-end: 1em;
+  background-color: rgba(30, 30, 30, 0.3)
+}
+
+.suggestions-box {
+  border: 1px solid white;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 200px;
+  background-color: white;
+  position: absolute;
+  bottom: 60%;
+  z-index: 1000;
+  display: none;
+  color: black;
+  border-radius: 5px;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.suggestion-item:hover {
+  background-color: lightgrey;
+}
+
+.suggestion-item:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-top: 10px;
+}
+
+.suggestion-item:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.switch {
+  margin-top: 2px;
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: yellow;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  border: solid 1px black;
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: red;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px red;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
